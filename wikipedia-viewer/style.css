@@ -1,0 +1,90 @@
+
+/* standard css */
+html, body{
+	height: 100%;
+	width: 100%;
+	background-color: rgb(31,99,159);
+}
+
+#logo{
+	position: absolute;
+	top: 4%;
+	left: 3%;
+}
+
+h1{
+	font-size: 2.4em;
+}
+
+h1, h2{
+	text-align: center;
+	color: white;
+	font-weight: bold;
+}
+
+form{
+	position: absolute;
+	top: 30%;
+	left: 38%;
+}
+
+input{
+	width: 300px;
+	height: 40px;
+	border-radius: 10px;
+	display: block;
+	border: 2px solid orange;
+	position: relative;
+	box-shadow: 10px 10px 30px;
+}
+
+
+#random{
+	position: absolute;
+	top: 85%;
+	right: 4%;
+	height: 75px;
+	width: 200px;
+	border-radius: 10px;
+	color: rgb(31,99,159);
+	font-size: 1.2em;
+}
+
+
+/* JavaScript Updates */
+
+.javascriptA{
+	display: block;
+	text-align: center;
+	line-height: 40px;
+	background-color: rgba(255,255,255,0.4);
+	height: 50px;
+	border-bottom: 1px solid black;
+}
+
+#articles{
+	background-color: rgba(255,255,255,0.4);
+	width: 700px;
+	height: 500px;
+	overflow: scroll;
+	position: absolute;
+	left: 20%;
+	top: 20%;
+}
+
+.ul-style{
+	list-style: none;
+	background-color: rgba(255,255,255,0.4);
+}
+
+.li-style{
+	border-bottom: 2px solid blue;
+	color: black;
+}
+
+.li-style a{
+	text-decoration: none;
+	color: black;
+	font-weight: bold;
+	font-size: 1.4em;
+}
