@@ -1,0 +1,65 @@
+*{
+	box-sizing: border-box;
+}
+
+html, body{
+	height: 100%;
+	width: 100%;
+}
+
+body{
+	color: black;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+
+h1{
+	text-align: center;
+	font-size: 2.4em;
+	letter-spacing: 3px;
+}
+
+#info{
+	background-color: rgba(255,255,255,0.2);
+	height: 75%;
+	width: 70%;
+	margin: auto 15%;
+	padding: 30px;
+	overflow: scroll;
+	border: 1px solid black;
+}
+
+.opening-txt{
+	text-align: center;
+	position: relative;
+	top: 100px;
+}
+
+button{
+	width: 175px;
+	height: 75px;
+	position: absolute;
+	top: 2%;
+	left: 3%;
+}
+
+footer p{
+	margin-left: 25px;
+}
+
+/* JavaScript Styling */
+
+img{
+	height: 80px;
+	width: auto;
+	margin-left: 45%;
+}
+
+h3{
+	text-align: center;
+}
+
+.main{
+	text-align: center;
+}
