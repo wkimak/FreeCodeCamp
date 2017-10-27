@@ -1,3 +1,4 @@
+
 /* standard css */
 html, body{
 	height: 100%;
@@ -5,16 +6,14 @@ html, body{
 	background-color: rgb(31,99,159);
 }
 
-body{
-	background-image: url("https://upload.wikimedia.org/wikipedia/en/thumb/8/80/Wikipedia-logo-v2.svg/1200px-Wikipedia-logo-v2.svg.png");
-	background-repeat: no-repeat;
-	background-size: contain;
-	background-position: center left;
-	height: 350px;
-	width: auto;
+/* wikipedia globe styling */
+#globe{
+	position: absolute;
+	top: 20px;
+	left: 20px;
 }
 
-
+/* title styling */
 h1{
 	font-size: 2.4em;
 }
@@ -24,9 +23,10 @@ h1, h2{
 	color: white;
 	font-weight: bold;
 	z-index: 1;
+	visibility: visible;
 }
 
-
+/* search bar styling */
 input{
 	width: 300px;
 	height: 40px;
@@ -35,11 +35,12 @@ input{
 	border: 2px solid orange;
 	display: block;
 	position: relative;
+	margin-top: 50px;
 	margin-right: auto;
 	margin-left: auto;
 }
 
-
+/* random article btn styling */
 #random{
 	position: absolute;
 	top: 5%;
@@ -49,6 +50,7 @@ input{
 	border-radius: 10px;
 	color: rgb(31,99,159);
 	font-size: 1.2em;
+	background-color: white;
 }
 
 
@@ -63,16 +65,18 @@ input{
 	border-bottom: 1px solid black;
 }
 
+/* individiual articles */
 #articles{
 	background-color: rgb(255,255,255);
 	width: 800px;
 	height: 500px;
 	overflow: scroll;
-	position: absolute;
-	left: 20%;
-	top: 20%;
+	margin-left: auto;
+	margin-right: auto;
 	padding: 20px;
 	border-radius: 5px;
+	position: relative;
+	bottom: 50px;
 }
 
 .ul-style{
@@ -105,5 +109,9 @@ body{
 
 #articles{
 	width: 400px;
+}
+
+#globe{
+	visibility: hidden;
 }
 }
