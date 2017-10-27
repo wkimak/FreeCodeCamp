@@ -9,8 +9,8 @@ $("form").submit(function(event){
 event.preventDefault();
 
 //animations
-$("h1,h2").fadeOut(400);
-$("#search").animate({bottom:'75px'}, 400);
+$("h1,h2").css("visibility", "hidden");
+$("#search").animate({bottom:'90px'}, 400);
 $("#articles").fadeIn(700);
 
 
