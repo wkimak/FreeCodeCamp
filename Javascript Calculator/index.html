@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title> Calculator </title>
+  <link href="style.css" rel="stylesheet" type="text/css">
+   <script   src="https://code.jquery.com/jquery-3.2.1.min.js"   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="   crossorigin="anonymous"></script> 
+</head>
+
+<body>
+
+
+  <div id="container" draggable="true">
+    <h3> Electronic Calculator </h3>
+    <div id="screen"> </div>
+    <table id="buttons">
+      <tr>
+        <td> <button type="button" class="ac-ce" id="ac"> AC </button> </td>
+        <td> <button type="button" class="ac-ce" id="ce"> CE </button> </td>
+        <td> <button type="button" value = "%" id="percent"> % </button> </td>
+        <td> <button type="button" value="/" id="divide"> / </button> </td>
+      </tr>
+        <tr>
+        <td> <button type="button" value = "7" id="seven"> 7 </button> </td>
+        <td> <button type="button" value = "8" id="eight"> 8 </button> </td>
+        <td> <button type="button" value = "9" id="nine"> 9 </button> </td>
+        <td> <button type="button" value = "*" id="multiply"> x </button> </td>
+      </tr>
+        <tr>
+        <td> <button type="button"  value = "4" id="four"> 4 </button> </td>
+        <td> <button type="button"  value = "5" id="five"> 5 </button> </td>
+        <td> <button type="button"  value = "6" id="six"> 6 </button> </td>
+        <td> <button type="button"  value = "-" id="subtract"> - </button> </td>
+      </tr>
+        <tr>
+        <td> <button type="button" value = "1" id="one"> 1 </button> </td>
+        <td> <button type="button" value = "2" id="two"> 2 </button> </td>
+        <td> <button type="button" value = "3" id="three"> 3 </button> </td>
+        <td rowspan="2"> <button type="button" value = "+" id="add"> + </button> </td>
+      </tr>
+        <tr>
+        <td> <button type="button" value = "0" id="zero"> 0 </button> </td>
+        <td> <button type="button" value = "." id="decimal"> . </button> </td>
+        <td> <button type="button" id="equals"> = </button> </td>
+      </tr>
+    </table>
+
+  </div>
+
+  <script src="calc.js" type="text/javascript"></script>
+
+</body>
+
+</html>
