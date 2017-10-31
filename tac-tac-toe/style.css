@@ -24,10 +24,6 @@ h1{
 	justify-content: center;
 }
 
-#cells{
-	display: none;
-}
-
 
 #cell0, #cell1, #cell2, #cell3, #cell4, #cell5, #cell6, #cell7, #cell8 {
 	height: 200px;
@@ -38,26 +34,3 @@ h1{
 	padding-left: 50px;
 }
 
-
-/* -------------- x or o? ---------------- */
-#x, #o{
-	background-color: black;
-	color: green;
-	height: 200px;
-	width: 200px;
-	border-radius: 10px;
-	display: inline-block;
-	border: 2px solid green;
-	font-size: 82px;
-	padding-top: 50px;
-	padding-left: 70px;
-	margin-right: 50px;
-}
-
-#player-container{
-	width: 505px;
-	margin-left: auto;
-	margin-right: auto;
-	position: relative;
-	top: 150px;
-}
