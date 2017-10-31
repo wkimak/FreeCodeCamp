@@ -34,26 +34,6 @@ var playerContainer = document.getElementById("player-container");
 // ----------------- Start Game ------------------ //
 
 
-
-  
-  function xyz (){
-  if(event.target == xContainer){
-  playerContainer.style.display = "none";
-  cells.style.display = "block";
-  var xplayer = players.player1();
-} else if(event.target == oContainer){
-  playerContainer.style.display = "none";
-  cells.style.display = "block";
-  xplayer = players.player2();
-}
-return xplayer;
-}
-
-
-playerContainer.addEventListener("click", xyz);
-
-  
-
 // function that decides the winner
 function winner(){
 
@@ -103,13 +83,13 @@ var players = {
   }
 };
 
-console.log(xyz());
+
 // ----------- MAIN Moves function -------------- //
 function move(){
 
 function x(){
 //append "x" to event.target 
- event.target.appendChild(xyz());
+ event.target.appendChild(players.player1());
 //push removed event.target index into xArray
 xArray.push(cellsArray.splice(cellsArray.indexOf(event.target),1));
 //flatten xArray
@@ -121,7 +101,7 @@ xArray = xArray.reduce(function(prev, next){
 function o(){
 //if cellArray length is more than 1, append player 2
 if(cellsArray.length > 1){
-cellsArray[0].appendChild(xyz());
+cellsArray[0].appendChild(players.player2());
 //push removed cellsArray index into oArray
 oArray.push(cellsArray.splice(0,1));
 //flatten oArray
