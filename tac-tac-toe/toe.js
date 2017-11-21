@@ -96,6 +96,7 @@ xArray.push(cellsArray.splice(cellsArray.indexOf(event.target),1));
 xArray = xArray.reduce(function(prev, next){
   return prev.concat(next);
 },[]);
+console.log(xArray);
 }
 
 function o(){
