@@ -1,0 +1,237 @@
+*{
+	box-sizing: border-box;
+}
+
+html{
+	height: 100%;
+	width: 100%;
+}
+
+body{
+	background-image: url("https://wallpaperscraft.com/image/dark_spot_background_texture_50611_1920x1080.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 100%;
+}
+
+/* Main container styling */
+#main-container{
+	box-shadow: 0 0 300px rgb(87,7,7);
+	border-radius: 50%;
+	height: 700px;
+	width: 700px;
+	margin: auto;
+	position: relative;
+	top: 5%;
+	z-index: 2;
+}
+
+/* Center Piece container styling */
+#center-piece{
+	box-shadow: 5px 5px 30px black;
+	border-radius: 50%;
+	height: 300px;
+	width: 300px;
+	margin: auto;
+	position: relative;
+	top: 25%;
+	background-color: black;
+	z-index: 1;
+}
+
+/* center-piece title styling */
+#center-piece p{
+	font-size: 38px;
+	letter-spacing: 3px;
+	font-family: 'Knewave', cursive;
+	color: rgb(87,0,0);
+	position: absolute;
+	top: 20px; 
+	left: 30%;
+}
+
+/* count screen container styling */
+#count{
+	height: 50px;
+	width: 100px;
+	color: red;
+	background-color: grey;
+	border-radius: 5px;
+	position: absolute;
+	top: 45%;
+	left: 15%;
+	font-size: 34px;
+	text-align: center;
+}
+
+/* start button styling */
+#start {
+height: 50px;
+width: 50px;
+background-color: rgb(87,0,0);
+border-radius: 100%;
+margin-right: 20px;
+}
+
+/* restart button styling */
+#restart{
+	height: 50px;
+	width: 50px;
+	background-color: orange;
+	border-radius: 100%
+}
+
+/* position start and restart button */
+#start, #restart{
+	position: relative;
+	top: 45%;
+	left: 54%;
+}
+
+
+/* On/ Off switch */
+input[type=checkbox]{
+	height: 0;
+	width: 0;
+	visibility: hidden;
+}
+
+label{
+	cursor: pointer;
+	text-indent: -9999px;
+	width: 75px;
+	height: 30px;
+	background: grey;
+	display: block;
+	border-radius: 100px;
+	position: absolute;
+	top: 75%;
+	left: 40%;
+}
+
+label:after{
+	content: '';
+    position: absolute;
+    top: 2px;
+    left: 5px;
+    width: 25px;
+    height: 25px;
+    background: #fff;
+    border-radius: 90px;
+    transition: 0.3s;
+}
+
+input:checked + label {
+	background: red;
+}
+
+input:checked + label:after {
+	left: calc(100% - 5px);
+	transform: translateX(-100%);
+}
+
+label:active:after {
+	width: 40px;
+}
+
+
+/* Individual button styling */
+#btn1{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	background-color: rgb(87,7,7) ;
+	height: 50%;
+	width: 50%;
+	border-radius: 100% 0 0 0;
+	border-bottom: 5px solid black;
+	border-right: 5px solid black;
+}
+
+#btn2{
+	position: absolute;
+	top: 0;
+	left: 50%;
+	height: 50%;
+	width: 50%;
+	background-color: white;
+	border-radius: 0 100% 0 0;
+	border-left: 5px solid black;
+	border-bottom: 5px solid black;
+}
+
+#btn3{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	height: 50%;
+	width: 50%;
+	background-color: rgb(87,7,7);
+	border-top: 5px solid black;
+	border-left: 5px solid black;
+	border-radius: 0 0 100% 0;
+}
+
+#btn4{
+	position: absolute;
+	top: 50%;
+	left: 0;
+	height: 50%;
+	width: 50%;
+	background-color: white;
+	border-top: 5px solid black;
+	border-right: 5px solid black;
+	border-radius: 0 0 0 100%;
+}
+
+
+/* Main Button Hover affects */
+#btn1:hover{
+	background-color: rgba(255,255,255,0.7);
+}
+#btn2:hover{
+	background-color: rgba(255,255,255,0.7);
+}
+#btn3:hover{
+	background-color: rgba(255,255,255,0.7);
+}
+#btn4:hover{
+	background-color: rgba(255,255,255,0.7);
+}
+
+/* --------------- Animations ------------------ */
+
+@keyframes light{
+	0%{background-color: "";}
+	25%{background-color: rgba(247, 205, 107,0.6);}
+	50%{background-color: rgba(247, 205, 107,0.6);}
+	75%{background-color: rgba(247, 205, 107,0.6);}
+	100%{background-color: "";}
+}
+
+.light{
+	animation-name: light;
+	animation-duration: 1s;
+}
+
+@keyframes gameOver{
+	from{background-color: "";}
+	to{background-color: red;}
+}
+
+.gameOver{
+	animation-name: gameOver;
+	animation-iteration-count: infinite;
+	animation-duration: 1s;
+	animation-timing-function: ease-out;
+}
+
+@keyframes victory{
+	from {transform: rotate(0deg);}
+	to {transform: rotate(1080deg);}
+}
+
+.victory{
+	animation-name: victory;
+	animation-duration: 3s;
+}
