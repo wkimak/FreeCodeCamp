@@ -1,59 +1,78 @@
-$("document").ready(function(){  
 
-// array declaration
-var posArray = [];
 
-//Pushing lat/lon into array
-if(navigator.geolocation){
-  navigator.geolocation.getCurrentPosition(function(position){
-return posArray.push(position.coords.latitude, position.coords.longitude);
-  });
-}
+$("document").ready(function(){ 
+
+var latitude;
+var longitude;
+// -------------- get location from geolocator ----------- //
+
+$.getJSON("https://ipinfo.io/geo", getLocation);
+
+function getLocation(data){
+  var location = data.loc.split(",");
+   var url = "https://fcc-weather-api.glitch.me/api/current?lat=" + location[0] + "&lon=" + location[1] + "&format=json";
+ 
+$("#btn").click(function(){
+$(".divTiles").fadeOut(2000);
+$("#btn").fadeOut(2000); 
+
+
+
+$("#div1").animate({
+  height: "100%",
+  width:"50%",
+  backgroundColor: "rgba(5,5,150,1.0)",
+},{
+  duration: 2000,
+  queue: false,
+});
+
+
+$("#div13").animate({
+  height: "100%", 
+  width: "50%", 
+  position: "absolute", 
+  left: "50%", 
+  top: "0"
+},{
+duration: 2000,
+queue: false
+});
+
 
 //convert celcius to fahrenheight
 function fare(celcius){
 var fahrenheight = celcius*9/5+32;
-return fahrenheight;
+return Math.floor(fahrenheight);
 }
 
-//event listener
-$("#btn").click(function(){
-  
-//ajax
-var url = "https://fcc-weather-api.glitch.me/api/current?";
-
-//data
-var coords = {
-  lat: posArray[0],
-  lon: posArray[1]
-};
-
-//callback function
 function showWeather(data){
-   weatherHTML = "<h1>" + data.name + ", " + data.sys.country + "</h1>";
+   weatherHTML = "<h1 id='location'>" + data.name + ", " + data.sys.country + "</h1>";
+   weatherHTML += "<h2>" + data.weather[0].main + "</h2>";
    weatherHTML += '<img src=' + data.weather[0].icon + '">';
-   weatherHTML += "<h2 class='main'>" + data.weather[0].main + "</h2>";
+   weatherHTML += "<h2 class='main'>" + data.weather[0].description + "</h2>";
    weatherHTML += "<h3> Temp: " + fare(data.main.temp) + " deg </h3>";
-   weatherHTML += "<h3> Wind Speed: " + data.wind.speed + "mph </h3>";
+  
 
-$("#info").html(weatherHTML);
+   weatherDiv3 = "<div id='weatherDiv3'> Humidity <br>" + data.main.humidity + "</div>";
+   weatherDiv2 = "<div id='weatherDiv2'> Max Temperature <br>" + fare(data.main["temp_max"]) + " deg</div>";
+   weatherDiv1 = "<div id='weatherDiv1'> Min Temperature <br>" + fare(data.main["temp_min"]) + " deg</div>";
+   weatherDiv4 = "<div id='weatherDiv4'> Wind Speed <br>" + data.wind.speed + "mph</div>";
 
-//background images
-var background = document.getElementsByTagName("body")[0];
-var h2 = document.querySelector("h2.main");
+$("#div1").html(weatherHTML);
 
-if(h2.textContent == "Rain"){
- background.style.backgroundImage = "url('https://cdn.pixabay.com/photo/2014/02/26/16/52/rain-275316_960_720.jpg')";
-} else if(h2.textContent == "Clouds"){
- background.style.backgroundImage = "url('https://icons.wxug.com/data/wximagenew/o/ozcazz/249.jpg')";
-} else if(h2.textContent == "Mist"){
-	background.style.backgroundImage = "url('https://static.pexels.com/photos/157304/pexels-photo-157304.jpeg')"
+setTimeout(function(){
+$("#div13").append(weatherDiv1);
+$("#div13").append(weatherDiv2);
+$("#div13").append(weatherDiv3);
+$("#div13").append(weatherDiv4);
+}, 2000);
 }
-};
 
-// getJSON method
-$.getJSON(url, coords, showWeather);
 
-}); // btn click event
+  $.getJSON(url, showWeather);
+}); //click event
+ 
+} //get location function
 
-}); //ready function
+});// ready function
