@@ -161,3 +161,4 @@ restartBtn.addEventListener("click", function(){
     btn4.classList.remove("gameOver");  
   }
 });
+ 
