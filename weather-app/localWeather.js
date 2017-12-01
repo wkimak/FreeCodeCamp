@@ -76,3 +76,4 @@ $("#div13").append(weatherDiv4);
 } //get location function
 
 });// ready function
+
