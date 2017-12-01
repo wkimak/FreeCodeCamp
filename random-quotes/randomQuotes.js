@@ -42,4 +42,4 @@ $("body").animate({backgroundColor: "purple"}, 1000);
 	$("html body").animate({backgroundColor: "yellow"}, 1000);
 }
 });
-});
+}); 
