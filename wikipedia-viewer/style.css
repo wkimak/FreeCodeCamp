@@ -1,30 +1,44 @@
 
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Ovo');
+
+
 /* standard css */
 html, body{
 	height: 100%;
 	width: 100%;
 	background-color: rgb(31,99,159);
+	font-family: 'Ovo', serif;
 }
 
 /* wikipedia globe styling */
 #globe{
 	position: absolute;
-	top: 20px;
-	left: 20px;
+	top: 30%;
+	left: 10px;
+	z-index: 0;
+	animation-name: animateGlobe;
+	animation-duration: 10s;
+	animation-iteration-count: infinite;
 }
+
+/* globe animation */
+@keyframes animateGlobe{
+     0%{transform: translateY(0px);}
+     50%{transform: translateY(15px);}
+     100%{transform: translateY(0px);}
+}
+
+
 
 /* title styling */
 h1{
-	font-size: 2.4em;
-}
-
-h1, h2{
+	font-size: 2.8em;
 	text-align: center;
 	color: white;
 	font-weight: bold;
-	z-index: 1;
 	visibility: visible;
 }
+
 
 /* search bar styling */
 input{
@@ -38,6 +52,7 @@ input{
 	margin-top: 50px;
 	margin-right: auto;
 	margin-left: auto;
+	z-index: 1;
 }
 
 /* random article btn styling */
@@ -73,7 +88,8 @@ input{
 	overflow: scroll;
 	margin-left: auto;
 	margin-right: auto;
-	padding: 20px;
+	padding-right: 40px;
+	padding-left: 10px;
 	border-radius: 5px;
 	position: relative;
 	bottom: 50px;
@@ -97,6 +113,11 @@ input{
 	font-size: 1.4em;
 }
 
+.li-style:hover{
+	background-color: rgba(31,99,159,0.2);
+}
+
+
 /* Media Queries */
 @media only screen and (max-width: 768px) {
 #random{
@@ -114,4 +135,4 @@ body{
 #globe{
 	visibility: hidden;
 }
-} 
+}
