@@ -1,8 +1,22 @@
+
+
 $("document").ready(function(){
+
+   var options = {
+        strings: ["I want to learn about...", "I want to learn about..."],
+        startDelay: 800,
+        typeSpeed: 120,
+        backDelay: 3000,
+        loop: true,
+     }
+    
+    var typed = new Typed("#typedText", options);
+
 
   //hiding #articles before submit event
   $("#articles").hide();
-	
+
+	   
 
 // submit event
 $("form").submit(function(event){
@@ -13,6 +27,7 @@ $("h1,h2").css("visibility", "hidden");
 $("#search").animate({bottom:'90px'}, 400);
 $("#articles").fadeIn(700);
 $("#globe").animate({opacity: "0.2"}, 400);
+$("#random").css({"position": "absolute", "top": "-20px", "right": "10px"})
 
 
 //input variable
@@ -47,3 +62,4 @@ $.getJSON(url, options, showArticles);
 
 
 }); //ready function
+
