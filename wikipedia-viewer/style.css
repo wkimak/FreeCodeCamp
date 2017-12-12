@@ -62,14 +62,17 @@ input{
 	width: 350px;
 	height: 40px;
 	border-radius: 10px;
-	box-shadow: 10px 10px 30px;
-	border: 2px solid orange;
+	box-shadow: 10px 10px 30px black;
+	border: 2px solid black;
 	display: block;
 	position: relative;
 	margin-top: 50px;
 	margin-right: auto;
 	margin-left: auto;
+	padding-left: 10px;
 	z-index: 1;
+	background-color: rgba(0,0,0,0.5);
+	color: white;
 }
 
 /* random article btn styling */
