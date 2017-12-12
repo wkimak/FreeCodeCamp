@@ -1,0 +1,201 @@
+*{
+	box-sizing: border-box;
+}
+
+html, body{
+	height: 100%;
+	width: 100%;
+}
+
+/* Body Styling */
+body{
+padding: 0px 50px;
+
+background: linear-gradient(359deg, #000000, #750000, #006aa2);
+background-size: 1300% 1300%;
+background-repeat: no-repeat;
+
+-webkit-animation: gradientAnimate 40s ease infinite;
+-moz-animation: gradientAnimate 40s ease infinite;
+animation: gradientAnimate 40s ease infinite;
+}
+
+/* Background Animations */
+@-webkit-keyframes gradientAnimate {
+    0%{background-position:58% 0%}
+    50%{background-position:43% 90%}
+    100%{background-position:58% 0%}
+}
+@-moz-keyframes gradientAnimate {
+    0%{background-position:58% 0%}
+    50%{background-position:43% 90%}
+    100%{background-position:58% 0%}
+}
+@keyframes gradientAnimate { 
+    0%{background-position:58% 0%}
+    50%{background-position:43% 90%}
+    100%{background-position:58% 0%}
+}
+
+
+header h1{
+	text-align: center;
+	color: white;
+	font-family: 'Spectral SC', serif;
+	font-size: 38px;
+	box-shadow: 3px 5px 30px black;
+	margin-bottom: -30px;
+}
+
+#submitBtn{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* -------- Character Cards ---------- */
+/* Parent */
+#characters-parent{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+
+/* Card styling */
+/* Divs */
+.front{
+	background-color: rgba(0,0,0,0.3);
+	margin-bottom: 30px;
+	padding-top: 10px;
+}
+
+/* Character Images */
+
+.front img{
+	width: 90%;
+	height: 95%;
+	display: block;
+	margin: auto;
+}
+
+
+.flip-container {
+	margin-top: 70px;
+	perspective: 1000px;
+	z-index: 1;
+	position: relative;
+	box-shadow: 5px 5px 30px black;
+	width: 385px;
+	height: 420px;
+	padding-left: 17px;
+	padding-top: 10px;
+}
+
+.flip-container.hover .flipper{
+	transform: rotateY(180deg);
+}
+
+ .front, .back{
+	width: 350px;
+	height: 400px;
+}
+
+.flipper{
+	transition: all 0.6s linear;
+	transform-style: preserve-3d;
+	position: relative;
+	transform-origin: 50% 50% 0;
+}
+
+
+.front, .back {
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden; 
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+
+.front{
+	z-index: 2;
+	transform: rotateY(0deg);
+}
+
+.back{
+	transform: rotateY(180deg);
+	background-color: white;
+	position: relative;
+	padding: 40px;
+	border: 3px solid silver;
+}
+
+/* Indivudal back colors */
+#tyrion-back{
+  background-color: rgb(255,199,199);
+}
+
+#hound-back, #bronn-back{
+	background-color: rgb(0,0,0);
+	color: white;
+}
+
+#jamie-back, #cersei-back{
+	background-color: rgb(107,0,0);
+}
+
+#varys-back{
+	background-color: rgb(145,204,255);
+}
+
+#olenna-back{
+	background-color: rgb(146, 255, 205);
+}
+
+#littlefinger-back{
+	background-color: rgb(7,17,58);
+	color: white;
+}
+
+/* ------- Learn More Styling -------- */
+
+
+.quoteBtn{
+	height: 35px;
+	width: 115px;
+	background-color: white;
+	display: inline-block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 40px;
+    font-family: 'Spectral SC', serif;
+}
+
+.quote-container{
+	font-size: 22px;
+	font-family: 'Libre Baskerville', serif;
+}
+
+
+.learnMoreBtn{
+	height: 35px;
+	width: 115px;
+	background-color: white;
+	display: inline-block;
+	margin-left: 60px;
+	margin-top: 40px;
+    font-family: 'Spectral SC', serif;
+}
+.learnContainer{
+	font-size: 18px;
+	margin-top: -20px;
+	font-family: 'Libre Baskerville', serif;
+}
+
+/* Footer */
+footer{
+	height: 100px;
+	width: 100%;
+}
