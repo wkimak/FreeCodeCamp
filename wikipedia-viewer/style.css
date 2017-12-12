@@ -13,8 +13,8 @@ html, body{
 /* wikipedia globe styling */
 #globe{
 	position: absolute;
-	top: 30%;
-	left: 10px;
+	top: 50%;
+	left: 30px;
 	z-index: 0;
 	animation-name: animateGlobe;
 	animation-duration: 10s;
@@ -29,20 +29,37 @@ html, body{
 }
 
 
-
 /* title styling */
 h1{
-	font-size: 2.8em;
+	font-size: 3.1em;
 	text-align: center;
-	color: white;
+	color: rgb(7,37,84);
 	font-weight: bold;
 	visibility: visible;
+}
+
+/* Animated Text */
+#centerTyped{
+	width: 100%;
+	text-align: center;
+	position: relative;
+	top: 30px;
+}
+
+#typedText{
+	color: white;
+	font-family: verdana;
+	font-size: 20px;
+}
+
+.typed-cursor{
+	color: white;
 }
 
 
 /* search bar styling */
 input{
-	width: 300px;
+	width: 350px;
 	height: 40px;
 	border-radius: 10px;
 	box-shadow: 10px 10px 30px;
@@ -57,15 +74,22 @@ input{
 
 /* random article btn styling */
 #random{
-	position: absolute;
-	top: 5%;
-	right: 4%;
-	height: 55px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 30px;
+	height: 45px;
 	width: 175px;
 	border-radius: 10px;
-	color: rgb(31,99,159);
+	color: rgb(7,37,84);
 	font-size: 1.2em;
-	background-color: white;
+	background-color: rgb(31,99,159);
+	border: 2px solid white;
+	font-family: 'Ovo', serif;
+}
+
+ a{
+	text-decoration: none;
 }
 
 
