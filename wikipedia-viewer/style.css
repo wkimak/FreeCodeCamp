@@ -3,6 +3,11 @@
 
 
 /* standard css */
+
+*{
+	box-sizing: border-box;
+}
+
 html, body{
 	height: 100%;
 	width: 100%;
@@ -40,10 +45,12 @@ h1{
 
 /* Animated Text */
 #centerTyped{
-	width: 100%;
-	text-align: center;
+	width: 350px;
 	position: relative;
 	top: 30px;
+	left: 20px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 #typedText{
@@ -58,22 +65,37 @@ h1{
 
 
 /* search bar styling */
+form{
+width: 350px;
+height: 60px;	
+margin-top: 50px;
+position: relative;
+display: block;
+margin-left: auto;
+margin-right: auto;
+}
+
 input{
 	width: 350px;
-	height: 40px;
+	height: 50px;
 	border-radius: 10px;
 	box-shadow: 10px 10px 30px black;
 	border: 2px solid black;
-	display: block;
-	position: relative;
-	margin-top: 50px;
-	margin-right: auto;
-	margin-left: auto;
-	padding-left: 10px;
+	padding-left: 50px;
 	z-index: 1;
 	background-color: rgba(0,0,0,0.5);
 	color: white;
+	font-size: 18px;
 }
+
+#searchIcon{
+	position: absolute; 
+	top: 7px; 
+	left: 8px;
+	color: orange;
+	opacity: 0.5;
+}
+
 
 /* random article btn styling */
 #random{
@@ -101,9 +123,9 @@ input{
 .javascriptA{
 	display: block;
 	text-align: center;
-	line-height: 40px;
+	line-height: 80px;
 	background-color: rgba(255,255,255,0.4);
-	height: 50px;
+	height: 100px;
 	border-bottom: 1px solid black;
 }
 
