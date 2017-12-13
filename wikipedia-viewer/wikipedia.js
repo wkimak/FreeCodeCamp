@@ -24,7 +24,7 @@ event.preventDefault();
 
 //animations
 $("h1,h2").css("visibility", "hidden");
-$("#search").animate({bottom:'90px'}, 400);
+$("form").animate({bottom:'90px'}, 400);
 $("#articles").fadeIn(700);
 $("#globe").animate({opacity: "0.2"}, 400);
 $("#random").css({"position": "absolute", "top": "-20px", "right": "10px"})
