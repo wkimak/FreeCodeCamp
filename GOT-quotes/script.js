@@ -1,14 +1,13 @@
 
 $("document").ready(function(){
 
-$(".front").append("<button class='quoteBtn'> Get Quote </button>");
 
 $(".quoteBtn").click(function(event){
 
 if(event.target.className != "learnMoreBtn"){	
 
 //get value of Img to pass along to http request
-var character = event.target.previousElementSibling.previousElementSibling.getAttribute("value");
+var character = event.target.previousElementSibling.getAttribute("value");
 console.log(character);
 
 //Quote API url	
@@ -49,10 +48,38 @@ var url = "https://anapioficeandfire.com/api/characters?name=" + charVal;
 var showHTML = "";
 function showInfo(data){
 	showHTML += "<div class='learnContainer'>";
-	showHTML += "<p> <i> Character:</i> " + data[0].name + "</p>";
-	showHTML += "<p> <i> Born:</i> " + data[0].born + "</p>";
-	showHTML += "<p> <i> Aliases:</i> " + data[0].aliases + "</p>";
-	showHTML += "<p> <i> Titles:</i> " + data[0].titles + "</p>";
+	/* Character */
+	showHTML += "<p> <b> Character:</b> " + data[0].name + "</p>";
+         
+	/* Born */
+	if(data[0].born != ""){
+	showHTML += "<p> <b> Born:</b> " + data[0].born + "</p>";
+}
+	/* Aliases */
+	showHTML += "<b> Aliases:</b> ";
+	$.each($(data[0].aliases), function(index, value){
+		if(value != ''){
+			if(index == $(data[0].aliases).length - 1){
+				showHTML += " " + value;
+            } else{
+            	showHTML +=  value + ", ";
+            }
+  }
+});
+      
+	/* Titles */
+    if(data[0].titles != ""){ 
+ 	showHTML += "<br> <br> <b> Titles:</b> ";
+	$.each($(data[0].titles), function(index, value){
+		if(value != ''){
+			if(index == $(data[0].titles).length - 1){
+				showHTML += " " + value;
+			}else{
+				showHTML += value + ", ";
+			}
+		}
+});
+}
 	showHTML += "</div>";
 
 
