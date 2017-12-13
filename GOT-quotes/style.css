@@ -44,7 +44,9 @@ header h1{
 	font-family: 'Spectral SC', serif;
 	font-size: 38px;
 	box-shadow: 3px 5px 30px black;
+	height: 100px;
 	margin-bottom: -30px;
+	padding-top: 20px;
 }
 
 #submitBtn{
@@ -95,6 +97,7 @@ header h1{
 
 .flip-container.hover .flipper{
 	transform: rotateY(180deg);
+
 }
 
  .front, .back{
@@ -167,10 +170,10 @@ header h1{
 	width: 115px;
 	background-color: white;
 	display: inline-block;
-	margin-left: auto;
-	margin-right: auto;
+	margin-left: 60px;
 	margin-top: 40px;
     font-family: 'Spectral SC', serif;
+    box-shadow: 2px 2px 30px black;
 }
 
 .quote-container{
@@ -184,9 +187,9 @@ header h1{
 	width: 115px;
 	background-color: white;
 	display: inline-block;
-	margin-left: 60px;
 	margin-top: 40px;
     font-family: 'Spectral SC', serif;
+    box-shadow: 2px 2px 30px black;
 }
 .learnContainer{
 	font-size: 18px;
@@ -199,3 +202,4 @@ footer{
 	height: 100px;
 	width: 100%;
 }
+
