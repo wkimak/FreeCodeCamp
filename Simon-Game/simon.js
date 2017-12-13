@@ -21,6 +21,7 @@ var btn3Audio = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound3.mp3
 var btn4Audio = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound4.mp3");
 
 var isOn = false; //variable to store is Simon Game is turned on
+var started = false; //variable to store if start button has been clicked
 var round = 1; //total number of rounds the user has made it through
 // random btn variables -- need global scope so they can be pushed into same pressedBtns[]
 var random1 = randomBtn();
@@ -59,10 +60,21 @@ return random;
 
 
 /* -------------------- Start Btn ---------------------- */
+
+
+
 // When user clicks start button function
 var start = function(random){
   if(isOn){
-    round=1;
+     
+     started = true;
+     //remove game over lights if running
+    btn1.classList.remove("gameOver");
+    btn2.classList.remove("gameOver");
+    btn3.classList.remove("gameOver");
+    btn4.classList.remove("gameOver");  
+
+    //round=1;
  counter.innerHTML = round;
  btnArray[random1].className = "light";
  //push first random btn into pressedBtns[]
@@ -101,8 +113,6 @@ for(var i = 0; i<btnTracker.length; i++){
 
  if(btnTracker.length == pressedBtns.length && pressedBtns.length != 0){
      
-      counter.textContent = round++;
-
      //wipe btnTracker [] clean    
      btnTracker.splice(0);
     //push next random btn into pressedBtns
@@ -126,6 +136,8 @@ for(var i = 0; i<btnTracker.length; i++){
       }, 1000);
 }, i * 1400);
   });
+   
+   counter.textContent = round++;
  }
  }
 
@@ -141,8 +153,9 @@ mainBtns.addEventListener("click", main);
 
 
 /* ------------------ Restart Button --------------------- */
+
 restartBtn.addEventListener("click", function(){
-    if(isOn){
+    if(isOn && started){
      pressedBtns.splice(0);
      btnTracker.splice(0); 
      round = 1;
