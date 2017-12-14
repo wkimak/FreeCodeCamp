@@ -16,6 +16,9 @@ var cells = document.getElementById("cells");
 var xContainer = document.getElementById("x");
 var oContainer = document.getElementById("o");
 var playerContainer = document.getElementById("player-container");
+var chooseContainer = document.getElementById("chooseContainer");
+var chooseX = document.getElementById("chooseX");
+var chooseO = document.getElementById("chooseO");
 
 
     //cell array
@@ -32,21 +35,54 @@ var playerContainer = document.getElementById("player-container");
 // ----------------- Start Game ------------------ //
 
 
-// players object
 var players = {
-  player1: function(){
+  user: "",
+  computer: "",
+}
+
+
+//Choose Player
+chooseContainer.addEventListener("click", function(event){
+
+if(event.target == chooseX){
+players.user = function(){
+   var x = document.createElement("SPAN");
+      x.setAttribute("width", "200px");
+      x.innerHTML = "<span class='playerText'>X</span>";
+      return x;
+}
+
+players.computer = function(){
+      var o = document.createElement("SPAN");
+      o.innerHTML = "<span class='playerText'>O</span>";
+      return o;
+}
+
+chooseContainer.style.display = "none";
+cells.style.display = "block";
+
+} else if(event.target == chooseO){
+players.user = function(){
+      var o = document.createElement("SPAN");
+      o.innerHTML = "<span class='playerText'>O</span>";
+      return o;
+};
+
+players.computer = function(){
       var x = document.createElement("SPAN");
       x.setAttribute("width", "200px");
       x.innerHTML = "<span class='playerText'>X</span>";
       return x;
-  },
+}
 
-  player2: function(){
-      var o = document.createElement("SPAN");
-      o.innerHTML = "<span class='playerText'>O</span>";
-      return o;
-  }
-};
+chooseContainer.style.display = "none";
+cells.style.display = "block";
+}
+
+});
+
+
+
 
 
 // ----------- MAIN Moves function -------------- //
@@ -54,11 +90,18 @@ function move(){
 console.log(cellsArray.length);
 function x(){
  
-//append "x" to event.target 
+//append players.user() to event.target 
 if(event.target.style.backgroundColor != "rgb(102, 198, 144)" && event.target.textContent != "X" && event.target.style.backgroundColor != "rgb(255,132,141)" && event.target.textContent != "O"){
-event.target.appendChild(players.player1());
+event.target.appendChild(players.user());
 event.target.className="x";
+
+console.log(players.user().textContent == "X");
+
+if(players.user().textContent == "X"){
 event.target.style.backgroundColor = "rgb(102,198,144)";
+} else{
+  event.target.style.backgroundColor = "rgb(255,132,141)";
+}
 
 //push removed event.target index into xArray
 xArray.push(cellsArray.splice(cellsArray.indexOf(event.target),1));
@@ -72,9 +115,15 @@ xArray = xArray.reduce(function(prev, next){
 function o(){
 //if cellArray length is more than 1, append player 2
 if(cellsArray.length > 1){
-cellsArray[0].appendChild(players.player2());
+cellsArray[0].appendChild(players.computer());
 cellsArray[0].className = "o";
-cellsArray[0].style.backgroundColor = "rgb(255,132,141)";
+
+if(players.user().textContent == "O"){
+    cellsArray[0].style.backgroundColor = "rgb(102,198,144)";
+} else{
+    cellsArray[0].style.backgroundColor = "rgb(255,132,141)";
+}
+
 //push removed cellsArray index into oArray
 oArray.push(cellsArray.splice(0,1));
 //flatten oArray
@@ -106,15 +155,32 @@ if(xArray.includes(victory[i][0]) && xArray.includes(victory[i][1]) && xArray.in
      var reload = setTimeout(function(){
       location.reload();
     },2000);
+    
+
+     if(players.user().textContent == "X"){
     victory[i][0].style.backgroundColor = "darkgreen";
     victory[i][1].style.backgroundColor = "darkgreen";
     victory[i][2].style.backgroundColor = "darkgreen";
+  } else{
+     victory[i][0].style.backgroundColor = "darkred";
+     victory[i][1].style.backgroundColor = "darkred";
+     victory[i][2].style.backgroundColor = "darkred";
+  }
     break;  
+  
   } else if(oArray.includes(victory[i][0]) && oArray.includes(victory[i][1]) && oArray.includes(victory[i][2])){
     alert("You Lose");
+    
+    if(players.user().textContent == "O"){
+     victory[i][0].style.backgroundColor = "darkgreen";
+     victory[i][1].style.backgroundColor = "darkgreen";
+     victory[i][2].style.backgroundColor = "darkgreen";
+  } else{
     victory[i][0].style.backgroundColor = "darkred";
     victory[i][1].style.backgroundColor = "darkred";
     victory[i][2].style.backgroundColor = "darkred";
+  }
+
     var reload = setTimeout(function(){
       location.reload();
     },2000);
